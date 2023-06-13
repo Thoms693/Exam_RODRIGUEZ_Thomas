@@ -71,12 +71,12 @@ export default function App() {
     ]);
     const [jeuCount, setJeuCount] = useState(jeuxVideos.length);
 //ajout
-    const handleAddGame = (newGame) => {
+    const handleAddJeu = (newGame) => {
         setJeuxVideos([...jeuxVideos, newGame]);
         setJeuCount(jeuCount + 1);
     };
 //suppr
-    const handleDeleteGame = (id) => {
+    const handleDeleteJeu = (id) => {
         setJeuxVideos((prevJeuxVideos) => {
             const updatedJeuxVideos = prevJeuxVideos.filter((jeu) => jeu.id !== id);
             setJeuCount(updatedJeuxVideos.length);
@@ -100,7 +100,7 @@ export default function App() {
                 <Text style={styles.jeuVideoPrice}>{item.price}</Text>
             </View>
             <Text style={styles.jeuVideoCategorie}>{item.catégorie}</Text>
-            <SupprJeu onPress={handleDeleteGame} id={item.id} />
+            <SupprJeu onPress={handleDeleteJeu} id={item.id} />
         </SafeAreaView>
     );
 
@@ -114,7 +114,7 @@ export default function App() {
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id.toString()}
             />
-            <AjoutForm onAddGame={handleAddGame} />
+            <AjoutForm onAddGame={handleAddJeu} />
         </SafeAreaView>
     );
 }

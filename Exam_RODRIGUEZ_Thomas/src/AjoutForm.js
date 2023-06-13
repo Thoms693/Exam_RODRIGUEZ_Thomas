@@ -6,7 +6,7 @@ const AjoutForm = ({ onAddGame }) => {
     const [price, setPrice] = useState('');
     const [catégorie, setCategorie] = useState('');
 
-    const handleAddGame = () => {
+    const handleAddJeu = () => {
         // verif si les champs sont remplis
         if (name && price && catégorie) {
             const newGame = {
@@ -46,7 +46,7 @@ const AjoutForm = ({ onAddGame }) => {
                     onChangeText={setCategorie}
                 />
             </View>
-            <Button title="Ajouter" onPress={handleAddGame}color="blue" />
+            <Button title="Ajouter" onPress={handleAddJeu}color="blue" />
         </View>
     );
 };
